@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+   <link rel="stylesheet" href="../static/css/aptForm.css"/>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Default Title</title>
+</head>
+<body class="appt">
+<form th:object="${apptForm}" method="post" th:action="@{/ethan/apptForm}">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label th:for="date">Date</label>
+            <input type="date" class="form-control" th:field="*{date}"/>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label th:for="time">Time</label>
+            <input type="time" class="form-control" th:field="*{time}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label th:for="location">Location</label>
+            <input type="location" class="form-control" th:field="*{location}">
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+</body>
+</html>
